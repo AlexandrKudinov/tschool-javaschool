@@ -19,17 +19,14 @@ public class Subsequence {
         if (x.isEmpty()) return true;
         if (y.isEmpty()) return false;
 
-        List<? super Objects> yExpl = y;
-
         int count = 0;
         for (int i = 0; i < x.size(); i++) {
-            for (int j = count; j < yExpl.size(); j++) {
+            for (int j = count; j < y.size(); j++) {
                 count = j;
-                if (x.get(i).equals(yExpl.get(j))) {
+                if (x.get(i).equals(y.get(j))) {
                     if (i == x.size() - 1) {
                         return true;
                     }
-                    yExpl.remove(j);
                     break;
                 }
             }
